@@ -129,11 +129,15 @@ jobs:
           make -j$(($(nproc) + 1)) V=s 2>&1 | tee build.log | grep -i error
           echo "status=success" >> ${GITHUB_OUTPUT}
 
+      - name: List openwrt directory
+        run: |
+          ls -al openwrt/
+  
       - name: Upload build log
         uses: actions/upload-artifact@v2
         with:
           name: build-log
-          path: /home/runner/work/build-openwrt/build-openwrt/openwrt/build.log
+          path: openwrt/build.log
           
       - name: Check space usage
         if: (!cancelled())
