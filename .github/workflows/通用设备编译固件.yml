@@ -49,7 +49,7 @@ jobs:
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
           sudo mkdir -p /workdir
-          sudo chown USER:{USER}:{GROUPS} /workd
+          sudo chown ${USER}:${GROUPS} /workd
           sudo timedatectl set-timezone "${TZ}"
           echo "status=success" >> ${GITHUB_OUTPUT}
 
