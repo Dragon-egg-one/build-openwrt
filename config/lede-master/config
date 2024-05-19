@@ -5046,8 +5046,8 @@ CONFIG_PACKAGE_luci-app-adguardhome_INCLUDE_binary=y
 # CONFIG_PACKAGE_luci-app-amule is not set
 # CONFIG_PACKAGE_luci-app-ap-modem is not set
 # CONFIG_PACKAGE_luci-app-apinger is not set
-CONFIG_PACKAGE_luci-app-argon-config=y
-CONFIG_PACKAGE_luci-app-argone-config=y
+# CONFIG_PACKAGE_luci-app-argon-config is not set
+# CONFIG_PACKAGE_luci-app-argone-config is not set
 # CONFIG_PACKAGE_luci-app-aria2 is not set
 CONFIG_PACKAGE_luci-app-arpbind=y
 # CONFIG_PACKAGE_luci-app-asterisk is not set
@@ -5460,9 +5460,9 @@ CONFIG_PACKAGE_luci-app-wol=y
 #
 # 4. Themes
 #
-CONFIG_PACKAGE_luci-theme-argon=y
+# CONFIG_PACKAGE_luci-theme-argon is not set
 # CONFIG_PACKAGE_luci-theme-argon-mod is not set
-CONFIG_PACKAGE_luci-theme-argone=y
+# CONFIG_PACKAGE_luci-theme-argone is not set
 # CONFIG_PACKAGE_luci-theme-atmaterial_new is not set
 CONFIG_PACKAGE_luci-theme-bootstrap=y
 # CONFIG_PACKAGE_luci-theme-bootstrap-mmdvm is not set
@@ -5535,12 +5535,6 @@ CONFIG_PACKAGE_luci-lib-xterm=y
 
 CONFIG_PACKAGE_default-settings=y
 CONFIG_PACKAGE_luci-i18n-accesscontrol-zh-cn=y
-# CONFIG_PACKAGE_luci-i18n-argon-config-es is not set
-CONFIG_PACKAGE_luci-i18n-argon-config-zh-cn=y
-# CONFIG_PACKAGE_luci-i18n-argon-config-zh_Hans is not set
-# CONFIG_PACKAGE_luci-i18n-argone-config-es is not set
-CONFIG_PACKAGE_luci-i18n-argone-config-zh-cn=y
-# CONFIG_PACKAGE_luci-i18n-argone-config-zh_Hans is not set
 CONFIG_PACKAGE_luci-i18n-arpbind-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-autoreboot-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-base-ca is not set
@@ -6049,7 +6043,7 @@ CONFIG_PACKAGE_iptables-mod-socket=y
 # end of Select iptgeoip options
 
 # CONFIG_PACKAGE_miniupnpc is not set
-# CONFIG_PACKAGE_miniupnpd is not set
+CONFIG_PACKAGE_miniupnpd=y
 # CONFIG_MINIUPNPD_IGDv2 is not set
 # CONFIG_PACKAGE_natpmpc is not set
 # CONFIG_PACKAGE_nftables-json is not set
