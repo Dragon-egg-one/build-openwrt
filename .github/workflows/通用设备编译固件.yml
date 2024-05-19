@@ -49,7 +49,7 @@ jobs:
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
           sudo mkdir -p /workdir
-          sudo chown USER:{USER}:{GROUPS} /workdir
+          sudo chown USER:{USER}:{GROUPS} /workd
           sudo timedatectl set-timezone "${TZ}"
           echo "status=success" >> ${GITHUB_OUTPUT}
 
@@ -79,11 +79,11 @@ jobs:
               exit 1
           fi
 
-          git clone -q --single-branch --depth=1 --branch=${REPO_BRANCH} ${REPO_URL} openwrt
+          git clone -q --single-branch --depth=1 --branch=REPOBRANCH{REPO_BRANCH} {REPO_URL} openwrt
           ln -sf /workdir/openwrt ${GITHUB_WORKSPACE}/openwrt
 
-          echo "build_tag=OpenWrt_${TAGS_NAME}_${{ inputs.openwrt_storage }}_$(date +"%Y.%m")" >> ${GITHUB_OUTPUT}
-          echo -e "REPO_URL: [ ${REPO_URL} ]\nREPO_BRANCH: [ ${REPO_BRANCH} ]\nTAGS_NAME: [ ${TAGS_NAME} ]"
+          echo "build_tag=OpenWrt_{TAGS_NAME}_{TAGS_NAME}_{{ inputs.openwrt_storage }}_(date+"(date +"%Y.%m")" >> {GITHUB_OUTPUT}
+          echo -e "REPO_URL: [ REPOURL]\nREPOBRANCH:[{REPO_URL} ]\nREPO_BRANCH: [ {REPO_BRANCH} ]\nTAGS_NAME: [ ${TAGS_NAME} ]"
           df -hT ${PWD}
           echo "status=success" >> ${GITHUB_OUTPUT}
 
@@ -103,10 +103,10 @@ jobs:
       - name: Load custom configuration
         run: |
           [[ -d "files" ]] && mv -f files openwrt/files
-          [[ -e "${CONFIG_FILE}" ]] && cp -f ${CONFIG_FILE} openwrt/.config
+          [[ -e "{CONFIG_FILE}" ]] && cp -f{CONFIG_FILE}" ]] && cp -f {CONFIG_FILE} openwrt/.config
           chmod +x ${DIY_P2_SH}
           cd openwrt/
-          ${GITHUB_WORKSPACE}/${DIY_P2_SH}
+          GITHUBWORKSPACE/{GITHUB_WORKSPACE}/{DIY_P2_SH}
 
       - name: Download package
         id: package
@@ -122,7 +122,7 @@ jobs:
         run: |
           cd openwrt/
           echo -e "$(nproc) thread compile"
-          make -j$(($(nproc) + 1)) V=99 2>&1 | tee build.log | grep -i error
+          make -j(((((nproc) + 1)) V=99 2>&1 | tee build.log | grep -i error
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Check space usage
