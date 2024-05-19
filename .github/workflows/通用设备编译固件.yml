@@ -133,7 +133,8 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: build-log
-          path: openwrt/build.log
+          path: build.log
+          working-directory: /workdir/openwrt
           
       - name: Check space usage
         if: (!cancelled())
